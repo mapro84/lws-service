@@ -1,0 +1,25 @@
+#controllers:
+#    resource:
+#        path: ../src/Controller/
+#        namespace: App\Controller
+#    type: attribute
+
+home:
+    path: /
+    controller: App\Controller\TestController::index
+
+test:
+    path: /test
+    controller: App\Controller\TestController::test
+
+user:
+    # path: /user/{age}
+    path: /user/{age<\d+>?0}
+    controller: App\Controller\TestController::user
+    methods: [GET, POST]
+    host: 127.0.0.1
+    schemes: [https, http]
+    #defaults:
+    #    age: 0
+    #requirements:
+    #    age: \d+
